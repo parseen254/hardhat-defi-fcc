@@ -6,7 +6,7 @@ const { networkConfig } = require("../helper-hardhat-config")
 async function main() {
     await getWeth()
     const { deployer } = await getNamedAccounts()
-    const lendingPool = await getLendingPool(deployer)
+    const lendingPool = await getLendingPool()
     const wethTokenAddress = networkConfig[network.config.chainId].wethToken
     await approveErc20(wethTokenAddress, lendingPool.address, AMOUNT, deployer)
     console.log("Depositing WETH...")
@@ -57,30 +57,26 @@ async function getDaiPrice() {
     return price
 }
 
-async function approveErc20(erc20Address, spenderAddress, amount, signer) {
-    const erc20Token = await ethers.getContractAt("IERC20", erc20Address, signer)
+async function approveErc20(erc20Address, spenderAddress, amount) {
+    const erc20Token = await ethers.getContractAt("IERC20", erc20Address)
     txResponse = await erc20Token.approve(spenderAddress, amount)
     await txResponse.wait(1)
     console.log("Approved!")
 }
 
-async function getLendingPool(account) {
+async function getLendingPool() {
     const lendingPoolAddressesProvider = await ethers.getContractAt(
         "ILendingPoolAddressesProvider",
         networkConfig[network.config.chainId].lendingPoolAddressesProvider,
-        account
     )
     const lendingPoolAddress = await lendingPoolAddressesProvider.getLendingPool()
-    const lendingPool = await ethers.getContractAt("ILendingPool", lendingPoolAddress, account)
+    const lendingPool = await ethers.getContractAt("ILendingPool", lendingPoolAddress)
     return lendingPool
 }
 
 async function getBorrowUserData(lendingPool, account) {
-    const {
-        totalCollateralETH,
-        totalDebtETH,
-        availableBorrowsETH
-    } = await lendingPool.getUserAccountData(account)
+    const { totalCollateralETH, totalDebtETH, availableBorrowsETH } =
+        await lendingPool.getUserAccountData(account)
     console.log(`You have ${totalCollateralETH} worth of ETH deposited.`)
     console.log(`You have ${totalDebtETH} worth of ETH borrowed.`)
     console.log(`You can borrow ${availableBorrowsETH} worth of ETH.`)
@@ -89,7 +85,7 @@ async function getBorrowUserData(lendingPool, account) {
 
 main()
     .then(() => process.exit(0))
-    .catch(error => {
+    .catch((error) => {
         console.error(error)
         process.exit(1)
     })

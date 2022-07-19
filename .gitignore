@@ -2,6 +2,9 @@
 # vscode
 .vscode
 
+# idea
+.idea
+
 # hardhat
 artifacts
 cache

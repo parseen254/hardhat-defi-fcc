@@ -564,10 +564,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers@^0.3.0-beta.13":
-  version "0.3.0-beta.13"
-  resolved "https://registry.yarnpkg.com/hardhat-deploy-ethers/-/hardhat-deploy-ethers-0.3.0-beta.13.tgz#b96086ff768ddf69928984d5eb0a8d78cfca9366"
-  integrity sha512-PdWVcKB9coqWV1L7JTpfXRCI91Cgwsm7KLmBcwZ8f0COSm1xtABHZTyz3fvF6p42cTnz1VM0QnfDvMFlIRkSNw==
+"@nomiclabs/hardhat-ethers@^2.0.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nomiclabs/hardhat-ethers/-/hardhat-ethers-2.1.0.tgz#9b7dc94d669ad9dc286b94f6f2f1513118c7027b"
+  integrity sha512-vlW90etB3675QWG7tMrHaDoTa7ymMB7irM4DAQ98g8zJoe9YqEggeDnbO6v5b+BLth/ty4vN6Ko/kaqRN1krHw==
 
 "@nomiclabs/hardhat-etherscan@^3.0.0":
   version "3.0.0"
@@ -6947,6 +6947,11 @@ prettier@^2.1.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
   integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
 
+prettier@^2.3.0:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
 printj@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/printj/-/printj-1.3.1.tgz#9af6b1d55647a1587ac44f4c1654a4b95b8e12cb"
@@ -8615,6 +8620,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^3.9.4:
+  version "3.9.10"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
+  integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typewise-core@^1.2, typewise-core@^1.2.0:
   version "1.2.0"
